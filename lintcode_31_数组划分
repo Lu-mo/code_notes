@@ -1,0 +1,25 @@
+lintcode 31 数组划分 中等
+"""
+与求数组中最大/最小K个数思路一致
+不用排序数组,计数即可
+"""
+
+answer 1
+class Solution:
+    """
+    @param nums: The integer array you should partition
+    @param k: An integer
+    @return: The index after partition
+    """
+    def partitionArray(self, nums, k):
+        # write your code here
+        n = len(nums)
+        #if n<1:
+        #    return 0
+        
+        count = 0
+        for i in range(n):
+            if nums[i]<k:
+                count += 1
+                
+        return count
