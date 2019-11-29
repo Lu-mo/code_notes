@@ -1,5 +1,57 @@
 lintcode 31 数组划分 中等
+
 """
+正解思路
+双指针交换
+二分查找
+"""
+answer 1
+class Solution:
+    """
+    @param nums: The integer array you should partition
+    @param k: An integer
+    @return: The index after partition
+    """
+    def partitionArray(self, nums, k):
+        # write your code here
+        n = len(nums)
+        if n < 1:
+            return 0
+            
+        l = 0
+        r = n - 1 
+        while l<r:
+            if nums[l]<k and nums[r]>=k:
+                l += 1 
+                r -= 1 
+            elif nums[l]<k:
+                l += 1 
+            elif nums[r]>=k:
+                r -= 1 
+            else:
+                nums[l],nums[r] = nums[r],nums[l]
+                l += 1 
+                r -= 1 
+        #print(nums)
+        
+        l = 0
+        r = n - 1
+        while l + 1 < r:
+            mid = (l+r) // 2
+            if nums[mid] >= k:
+                r = mid
+            else:
+                l = mid
+        
+        if nums[l] < k:
+            return r if r != n-1 or (nums[r]>=k) else n
+        else:
+            return l
+            
+
+
+"""
+作弊思路
 与求数组中最大/最小K个数思路一致
 不用排序数组,计数即可
 """
