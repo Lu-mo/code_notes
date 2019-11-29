@@ -1,5 +1,5 @@
 # lintcode 31 数组划分 中等
-
+[31.数组划分](https://www.lintcode.com/problem/partition-array/description)
 
 ## 正解思路:双指针交换+二分查找
 ```
