@@ -2,6 +2,9 @@
 [判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/)
 
 ## 首先思考两个节点集合或者BFS,但是受边出现顺序会导致误判,只能DFS
+```diff
+-bfs可行
+```
 ###   要点: 二分图判断就用着色+深度,矛盾就确定不是二分图
 ###   疑点: 如果有孤岛是不是随便丢尽任意集合?
 
